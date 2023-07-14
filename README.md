@@ -6,6 +6,12 @@
 docker compose build
 ```
 
+### 参考 rails インストール時のコマンド
+
+```sh
+docker compose run backend rails new . --api -d=mysql --minimal -T
+```
+
 ## ビルド後の DB 初期化
 
 ```sh
