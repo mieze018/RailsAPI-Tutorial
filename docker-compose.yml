@@ -34,10 +34,10 @@ services:
       - CHOKIDAR_USEPOLLING=true
       - NODE_ENV=development
     user: root
-    working_dir: /app
+    working_dir: /nuxt
     volumes:
-      - ./frontend:/app
-      - /app/node_modules
+      - ./frontend:/nuxt
+      - /nuxt/node_modules
     command: 
       - bash
       - -c
