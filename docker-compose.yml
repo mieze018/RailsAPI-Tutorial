@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:8.0
+    ports:
+      - 3396:3396
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: passw0rd
+      MYSQL_DATABASE: root
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    
+  backend:
+    build: ./backend
+    environment:
+      - APP_ENV=development
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3010 -b '0.0.0.0'"
+    volumes:
+      - ./backend:/app
+      - bundle_data:/usr/local/bundle
+    ports:
+      - "3010:3010"
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+    
+  frontend:
+    image: node:18
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_ENV=development
+    user: root
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: 
+      - bash
+      - -c
+      - |
+        yarn install
+        yarn dev -p 3009
+    ports:
+      - "3009:3009"
+volumes:
+  mysql_data:
+  bundle_data:
