@@ -1,3 +1,12 @@
 {
-  "cSpell.words": ["nuxt", "nuxtjs"]
+  "cSpell.words": ["nuxt", "nuxtjs"],
+  "ruby.useBundler": true,
+  "ruby.useLanguageServer": true,
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true,
+      "except": ["Metrics"] // because it is annoying that it puts wavy lines to all lines in those methods
+    }
+  },
+  "ruby.format": "rubocop"
 }
