@@ -33,3 +33,9 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails', '~> 6.0.0' # <= 追記
 end
+
+group :development do
+  gem 'rubocop', require: false #<= 追記
+  gem 'rubocop-rails', require: false #<= 追記
+  gem 'rubocop-rspec', require: false #<= 追記
+end
