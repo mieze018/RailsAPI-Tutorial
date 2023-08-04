@@ -1,17 +1,17 @@
-version: "3"
+version: '3'
 
 services:
   db:
     image: mysql:8.0
     ports:
-      - 3306:3306
+      - 3307:3307
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: root
     volumes:
       - ./mysql_data:/var/lib/mysql
-    
+
   backend:
     build: ./backend
     environment:
@@ -21,12 +21,12 @@ services:
       - ./backend:/app
       - bundle_data:/usr/local/bundle
     ports:
-      - 3001:3000
+      - 3004:3000
     depends_on:
       - db
     tty: true
     stdin_open: true
-    
+
   frontend:
     image: node:18
     tty: true
@@ -38,14 +38,14 @@ services:
     volumes:
       - ./frontend:/nuxt
       - /nuxt/node_modules
-    command: 
+    command:
       - bash
       - -c
       - |
         yarn install
-        yarn dev -p 3000
+        yarn dev -p 3003
     ports:
-      - "3000:3000"
+      - '3003:3003'
 volumes:
   mysql_data:
   bundle_data:
