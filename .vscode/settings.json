@@ -8,5 +8,8 @@
       "except": ["Metrics"] // because it is annoying that it puts wavy lines to all lines in those methods
     }
   },
-  "ruby.format": "rubocop"
+  "ruby.format": "rubocop",
+  "solargraph.useBundler": true,
+  "solargraph.diagnostics": true,
+  "solargraph.autoformat": true,//入力中の自動書式設定を有効にします。
 }
