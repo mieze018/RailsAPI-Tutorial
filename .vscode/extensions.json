@@ -1,3 +1,6 @@
 {
-  "recommendations": ["rebornix.ruby"]
+  "recommendations": [
+    "rebornix.ruby",
+    "streetsidesoftware.code-spell-checker"
+  ]
 }

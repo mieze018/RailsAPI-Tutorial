@@ -1,0 +1,21 @@
+{
+    "language": "en",
+    "ignorePaths": [
+        ".*",
+        ".git",
+        "db/schema.rb",
+        "docker-compose.yml",
+        "Dockerfile",
+        "Gemfile",
+        "Gemfile.lock",
+        "jsconfig.json",
+        "node_modules",
+        "package-lock.json",
+        "package.json",
+        "patches",
+        "Procfile",
+        "Rakefile",
+        "README.md",
+        "vendor"
+    ]
+}
