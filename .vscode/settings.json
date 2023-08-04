@@ -9,7 +9,17 @@
     }
   },
   "ruby.format": "rubocop",
-  "solargraph.useBundler": true,
-  "solargraph.diagnostics": true,
-  "solargraph.autoformat": true,//入力中の自動書式設定を有効にします。
+  // "solargraph.commandPath": "solargraph", //ソーラーグラフコマンドへのパス。これを絶対パスに設定して、インストールされている複数のRubyバージョンから選択します。
+  // "solargraph.useBundler": false, // ソーラーグラフを実行するために使用します。(これが当てはまる場合、無視されます)。bundle execsolargraph.commandPath
+  // "solargraph.bundlerPath": "bundle", //バンドル コマンドへのパス。
+  // "solargraph.checkGemVersion": true, //ソーラーグラフgemの新しいバージョンが利用可能かどうかを確認します。デフォルトは true です (推奨)。
+  "solargraph.diagnostics": true, //診断レポートを有効にします。診断オプションについては、構成ガイドを参照してください。
+  "solargraph.completion": true, //コード補完を有効にします。
+  "solargraph.hover": true, //ホバー情報を有効にします。
+  "solargraph.autoformat": true, //入力中の自動書式設定を有効にします。
+  "solargraph.formatting": true, //ドキュメントの書式設定を有効にします。gemは現在、フォーマットにRuboCopを使用しています。
+  "solargraph.symbols": true, //ドキュメントシンボルとワークスペースシンボルの検索を有効にします。
+  "solargraph.rename": true, //シンボルの名前変更を有効にする。
+  "solargraph.references": true, //参照の検索を有効にします。
+  "solargraph.folding": true //ソースコードの折りたたみ範囲を有効にします。
 }
