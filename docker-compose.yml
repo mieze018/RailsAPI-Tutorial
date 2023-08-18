@@ -46,6 +46,7 @@ services:
         yarn dev -p 3003
     ports:
       - '3003:3003'
+      - '24678:24678'
   swagger-editor:
     image: swaggerapi/swagger-editor
     ports:
