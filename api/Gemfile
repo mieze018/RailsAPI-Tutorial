@@ -36,3 +36,5 @@ group :development do
 end
 
 gem 'yard'
+
+gem 'rack-cors'
