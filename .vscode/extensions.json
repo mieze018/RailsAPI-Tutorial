@@ -1,6 +1,8 @@
 {
   "recommendations": [
     "rebornix.ruby",
-    "streetsidesoftware.code-spell-checker"
+    "streetsidesoftware.code-spell-checker",
+    "vue.vscode-typescript-vue-plugin",
+    "vue.volar"
   ]
 }
