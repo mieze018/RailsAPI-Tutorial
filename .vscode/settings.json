@@ -1,13 +1,21 @@
 {
-  "cSpell.words": ["nuxt", "nuxtjs"],
+  "cSpell.words": [
+    "nuxt",
+    "nuxtjs"
+  ],
   "ruby.useBundler": true,
   "ruby.useLanguageServer": true,
+  // Linter有効化(Rubocop, Reek, ESlint)
   "ruby.lint": {
     "rubocop": {
       "useBundler": true,
-      "except": ["Metrics"] // because it is annoying that it puts wavy lines to all lines in those methods
+      "except": [
+        "Metrics"
+      ], // because it is annoying that it puts wavy lines to all lines in those methods
+      "reek": true
     }
   },
+  // ruby
   "ruby.format": "rubocop",
   // "solargraph.commandPath": "solargraph", //ソーラーグラフコマンドへのパス。これを絶対パスに設定して、インストールされている複数のRubyバージョンから選択します。
   // "solargraph.useBundler": false, // ソーラーグラフを実行するために使用します。(これが当てはまる場合、無視されます)。bundle execsolargraph.commandPath
@@ -21,5 +29,34 @@
   "solargraph.symbols": true, //ドキュメントシンボルとワークスペースシンボルの検索を有効にします。
   "solargraph.rename": true, //シンボルの名前変更を有効にする。
   "solargraph.references": true, //参照の検索を有効にします。
-  "solargraph.folding": true //ソースコードの折りたたみ範囲を有効にします。
+  "solargraph.folding": true, //ソースコードの折りたたみ範囲を有効にします。
+  // デフォルトはフォーマット無効化
+  "editor.formatOnSave": false,
+  // 各言語別にフォーマッターを設定
+  "[ruby]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // 最終行に空行が無ければ自動で入れる
+  "files.insertFinalNewline": true,
+  // 改行コード(LF)
+  "files.eol": "\n",
+  // 文字コード(UTF-8)
+  "files.encoding": "utf8",
+  // 行末のスペースを削除
+  "files.trimTrailingWhitespace": true,
+  // タブ幅を固定
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  // eslint
+  "eslint.format.enable": true,
+  // prettier
+  "prettier.enable": true,
 }

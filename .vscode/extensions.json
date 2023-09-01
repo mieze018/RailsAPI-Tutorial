@@ -3,6 +3,8 @@
     "rebornix.ruby",
     "streetsidesoftware.code-spell-checker",
     "vue.vscode-typescript-vue-plugin",
-    "vue.volar"
+    "vue.volar",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
   ]
 }
