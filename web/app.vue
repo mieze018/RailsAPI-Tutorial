@@ -1,15 +1,15 @@
 <script setup lang="ts">
-const healthChecks = ref()
-const loading = ref(true)
+  const healthChecks = ref<string | null | undefined>(null);
+  const loading = ref(true);
 
-onMounted(async () => {
-  const { pending, data } = await useFetch(
-    'http://localhost:3004/api/v1/healthchecks'
-  )
-  loading.value = pending.value
-  healthChecks.value = data.value.request
-})
-const title = 'Rails API Nuxt TODO App'
+  onMounted(async () => {
+    const { pending, data } = await useFetch<{ request: string }>(
+      'http://localhost:3004/api/v1/healthchecks',
+    );
+    loading.value = pending.value;
+    healthChecks.value = data.value?.request;
+  });
+  const title = 'Rails API Nuxt TODO App';
 </script>
 <template>
   <div>
