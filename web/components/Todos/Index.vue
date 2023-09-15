@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import Delete from './Delete.vue';
   const dataRef = ref();
   const loading = ref(true);
 
@@ -21,6 +22,7 @@
     <ul>
       <li v-for="todo in dataRef" :key="todo.id">
         {{ todo.content }}
+        <Delete :id="todo.id" />
       </li>
     </ul>
     <!-- エラーだった場合 -->
