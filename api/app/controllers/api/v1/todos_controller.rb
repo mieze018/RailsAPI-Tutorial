@@ -15,13 +15,14 @@ module Api
       def create
         todo = Todo.new(todo_params)
         if todo.save
-          render status: :created
+          render json: @todo, status: :created
         else
-          render status: :unprocessable_entity
+          render json: @todo.errors, status: :unprocessable_entity
         end
       end
 
       def update
+        puts "todo_params: #{todo_params}"
         if @todo.update(todo_params)
           render status: :accepted
         else

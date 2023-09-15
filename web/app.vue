@@ -1,9 +1,13 @@
 <script setup lang="ts">
-  import HealthCheck from '~/components/HealthCheck.vue';
+  import Todos from '~/components/Todos/Index.vue';
+  import CreateTodo from '~/components/Todos/Create.vue';
 
   const title = 'Rails API Nuxt TODO App';
 </script>
 <template>
-  <h1>{{ title }}</h1>
-  <HealthCheck />
+  <div>
+    <h1>{{ title }}</h1>
+    <Todos />
+    <CreateTodo />
+  </div>
 </template>
