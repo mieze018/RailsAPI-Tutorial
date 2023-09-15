@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  const healthChecks = ref<string | null | undefined>(null);
+  const dataRef = ref<string | null | undefined>(null);
   const loading = ref(true);
 
   onMounted(async () => {
@@ -8,7 +8,7 @@
         'http://localhost:3004/api/v1/healthchecks',
       );
       loading.value = pending.value;
-      healthChecks.value = data.value?.request;
+      dataRef.value = data.value?.request;
     } catch (err) {
       console.error(err);
     }
@@ -19,6 +19,6 @@
     <div v-if="loading">Loading ...</div>
     <p v-if="!loading">healthChecks: {{ healthChecks }}</p>
     <!-- エラーだった場合 -->
-    <p v-if="!loading && !healthChecks">エラーが発生しました</p>
+    <p v-if="!loading && !dataRef">エラーが発生しました</p>
   </div>
 </template>
