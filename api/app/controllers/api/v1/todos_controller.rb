@@ -5,33 +5,33 @@ module Api
       before_action :set_todo, only: [:show, :update, :destroy]
       def index
         @todos = Todo.all
-        render status :ok, json: @todos
+        render status: :ok, json: @todos
       end
 
       def show
-        render status :ok, json: @todo
+        render status: :ok, json: @todo
       end
 
       def create
         todo = Todo.new(todo_params)
         if todo.save
-          render status :created
+          render status: :created
         else
-          render status :unprocessable_entity
+          render status: :unprocessable_entity
         end
       end
 
       def update
         if @todo.update(todo_params)
-          render status :accepted
+          render status: :accepted
         else
-          render status :unprocessable_entity
+          render status: :unprocessable_entity
         end
       end
 
       def destroy
         @todo.destroy
-        render status :accepted
+        render status: :accepted
       end
 
       private
